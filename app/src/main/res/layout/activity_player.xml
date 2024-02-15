@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgrounplayeractivity"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context=".playerActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        android:layout_weight="7"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/titlemusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:text="Song name"
+            android:textAlignment="center"
+            android:textColor="#FFAB00"
+            android:textSize="22sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.gauravk.audiovisualizer.visualizer.BlobVisualizer
+                android:id="@+id/blobVisualizer"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                app:avColor="#D66400"
+                app:avDensity="0.8"
+                app:avSpeed="normal"
+                app:avType="fill"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgsong"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:padding="20dp"
+                android:src="@drawable/advance"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <SeekBar
+                android:id="@+id/seek"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:indeterminateTintMode="multiply"
+                android:progressBackgroundTint="#EC0A0A"
+                android:progressTint="#D11414"
+                android:progressTintMode="multiply"
+                android:secondaryProgressTint="#0B8316"
+                android:secondaryProgressTintMode="multiply"
+                android:thumbTint="#950B0B" />
+
+            <TextView
+                android:id="@+id/starttxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_toLeftOf="@id/seek"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/endtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/seek"
+                android:text="00:00"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/playbtn"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/baseline_pause_circle_outline_24"
+                android:backgroundTintMode="multiply"
+                app:iconGravity="textStart"
+                app:iconSize="70dp"
+                app:rippleColor="@null" />
+
+            <Button
+                android:id="@+id/nextbtn"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/playbtn"
+                android:layout_weight="1"
+                android:background="@drawable/baseline_skip_next_24"
+                android:backgroundTint="@android:color/transparent"
+                android:backgroundTintMode="multiply"
+                app:iconGravity="textStart"
+                app:iconSize="70dp"
+                app:iconTint="#DD1818" />
+
+            <Button
+                android:id="@+id/previousbtn"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toStartOf="@id/playbtn"
+                android:background="@drawable/baseline_skip_previous_24"
+                android:backgroundTintMode="multiply"
+                app:iconGravity="textStart"
+                app:iconSize="50dp"
+                app:iconTint="#DD1818" />
+
+            <Button
+                android:id="@+id/ffbtn"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/nextbtn"
+                android:background="@drawable/baseline_forward_10_24"
+                android:backgroundTint="@android:color/transparent"
+                android:backgroundTintMode="multiply"
+                app:iconGravity="textStart"
+                app:iconSize="50dp" />
+
+            <Button
+                android:id="@+id/frbtn"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toStartOf="@id/previousbtn"
+                android:background="@drawable/baseline_replay_10_24"
+                android:backgroundTint="@android:color/transparent"
+                android:backgroundTintMode="multiply"
+                app:iconGravity="textStart"
+                app:iconSize="50dp"
+                app:iconTint="#DD1818" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/layer1">
+        <shape android:shape="rectangle" >
+            <gradient android:startColor="#9A0404"
+                android:endColor="@color/black"/>
+        </shape>
+    </item>
+    <item android:id="@+id/layer2" android:drawable="@drawable/baseline_music_note_24"  android:gravity="left"  android:height="50dp" android:width="50dp">
+   <shape android:shape="rectangle">
+       <stroke android:color="#2962FF" android:width="10dp" android:dashGap="0dp" android:dashWidth="10dp" />
+
+   </shape>
+    </item>
+</layer-list>

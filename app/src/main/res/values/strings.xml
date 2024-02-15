@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">mk player</string>
+    <string name="title_activity_player">playerActivity</string>
+
+</resources>
